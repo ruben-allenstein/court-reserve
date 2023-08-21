@@ -2,7 +2,6 @@ version: '3'
 services:
   db:
     image: mysql:8.0
-    container_name: court-reserve
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: symfony
@@ -11,6 +10,7 @@ services:
     volumes:
       - db_data:/var/lib/mysql
   php:
+    container_name: court-reserve
     build: php-fpm
     volumes:
       - ./:/var/www/symfony
